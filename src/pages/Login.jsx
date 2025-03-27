@@ -11,6 +11,7 @@ const Login = () => {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const handleLogin = async () => {
     try {
@@ -24,10 +25,7 @@ const Login = () => {
         setEmailError("Email is required");
         return;
       }
-      // if (!validateEmail(email)) {
-      //   setEmailError("Enter a valid email address");
-      //   return;
-      // }
+
       if (!password) {
         setPasswordError("Password is required");
         return;
@@ -48,10 +46,6 @@ const Login = () => {
     }
   };
 
-  const validateEmail = (email) => {
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/;
-    return emailPattern.test(email);
-  };
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-200">
       <div className="bg-white p-6 rounded shadow-md space-y-4 w-4/5 sm:w-3/5 md:w-1/4">

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Spinner from "../components/Spinner";
 
 const API_BASE_URL = "https://reqres.in/api";
 
@@ -10,23 +11,37 @@ const Home = () => {
   const [page, setPage] = useState(1);
   const token = localStorage.getItem("token");
   const navigate = useNavigate();
-
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
-    if (!token) navigate("/login");
-    axios
-      .get(`${API_BASE_URL}/users?page=${page}`)
-      .then((res) => setUsers(res.data.data))
-      .catch((err) => console.log(err));
-    axios
-      .get(`${API_BASE_URL}/users?page=${page + 1}`)
-      .then((res) => setNextUsers(res.data.data))
-      .catch((err) => console.log(err));
+    const fetch = async () => {
+      try {
+        if (!token) navigate("/login");
+        setLoading(true);
+
+        const res = await axios.get(`${API_BASE_URL}/users?page=${page}`);
+        setUsers(res.data.data);
+
+        const next_res = await axios.get(
+          `${API_BASE_URL}/users?page=${page + 1}`
+        );
+        setNextUsers(next_res.data.data);
+
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetch();
   }, [page, token, navigate]);
 
   const handleDelete = async (id) => {
     await axios.delete(`${API_BASE_URL}/users/${id}`);
     setUsers(users.filter((user) => user.id !== id));
   };
+
+  if (loading) {
+    return <Spinner />;
+  }
   return (
     <div className="p-6">
       <h2 className="text-2xl font-bold mb-4">Users</h2>
@@ -46,7 +61,7 @@ const Home = () => {
             </h3>
             <div className="flex gap-4">
               <button
-                onClick={() => handleDelete(user.id)}
+                onClick={() => navigate(`/users/${user.id}`)}
                 className="mt-2 w-full bg-green-500 text-white p-2 rounded"
               >
                 Edit

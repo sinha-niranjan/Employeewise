@@ -3,6 +3,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import ProtectedRoute from "./components/protectedRoute";
+import EditForm from "./pages/EditForm";
 
 const API_BASE_URL = "https://reqres.in/api";
 function App() {
@@ -14,6 +15,7 @@ function App() {
         {/* Protected Route  */}
         <Route element={<ProtectedRoute />}>
           <Route path="/users" element={<Home />} />
+          <Route path="/users/:userId" element={<EditForm />} />
         </Route>
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
