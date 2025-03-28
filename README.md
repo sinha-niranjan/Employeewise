@@ -1,16 +1,10 @@
 # EmployWise Assignment
 
-## Live Demo 
-
-Click here to view the live website
+[![Live Demo]](https://employeewise.vercel.app/)
 
 ## Installation
 
 ### Follow these steps to clone and run the project locally:
-
-## Prerequisites
-
-### Node.js (Latest LTS version recommended)
 
 ### Git
 
@@ -41,10 +35,11 @@ npm run dev
 yarn dev
 ```
 
-## 4.Open in Browser 
+## 4.Open in Browser
+
 ### The application will be running at:
 
-``` http://localhost:5173 ```
+`http://localhost:5173`
 
 ## Deployment
 
@@ -53,6 +48,3 @@ yarn dev
 ## Contributing
 
 ### Feel free to fork the repo and open a pull request with improvements.
-
-
-
