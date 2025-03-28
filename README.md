@@ -1,54 +1,58 @@
-Project Name
+# EmployWise Assignment
 
-Live Demo
+## Live Demo 
 
 Click here to view the live website
 
-Installation
+## Installation
 
-Follow these steps to clone and run the project locally:
+### Follow these steps to clone and run the project locally:
 
-Prerequisites
+## Prerequisites
 
-Node.js (Latest LTS version recommended)
+### Node.js (Latest LTS version recommended)
 
-Git
+### Git
 
-A package manager (npm or yarn)
+### A package manager (npm or yarn)
 
-Steps to Install and Run
+## Steps to Install and Run
 
-Clone the Repository
+## 1.Clone the Repository
 
-git clone https://github.com/your-username/your-repository.git
-cd your-repository
+```
+git clone https://github.com/sinha-niranjan/Employeewise.git
+cd Employeewise
+```
 
-Install Dependencies
+## 2.Install Dependencies
 
+```
 npm install
 # or
 yarn install
+```
 
-Run the Development Server
+## 3.Run the Development Server
 
+```
 npm run dev
 # or
 yarn dev
+```
 
-Open in Browser
-The application will be running at:
+## 4.Open in Browser 
+### The application will be running at:
 
-http://localhost:3000
+``` http://localhost:5173 ```
 
-Deployment
+## Deployment
 
-The project is deployed and accessible at the live link mentioned above.
+### The project is deployed and accessible at the live link mentioned above.
 
-Contributing
+## Contributing
 
-Feel free to fork the repo and open a pull request with improvements.
+### Feel free to fork the repo and open a pull request with improvements.
 
-License
 
-This project is licensed under MIT License.
 
