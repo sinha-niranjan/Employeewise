@@ -1,6 +1,6 @@
 # EmployWise Assignment
 
-[![Live Demo]](https://employeewise.vercel.app/)
+## [Live Demo](https://employeewise.vercel.app/)
 
 ## Installation
 
